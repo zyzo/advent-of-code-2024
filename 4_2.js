@@ -6,13 +6,17 @@ const data = readFileSync('4.txt', 'utf8');
 const lines = data.split('\n');
 
 
+const VALID  = ["SSMM", "MMSS", "MSMS", "SMSM"];
 const isXmas = (i, j) => {
     if (lines[i+1][j+1] !== 'A') {
         return false;
     }
-    if (`${lines[i][j]}${lines[i][j +2]}` !== `${lines[i+2][j]}${lines[i+2][j+2]}`
-        && 
-        `${lines[i][j]}${lines[i+2][j]}` !== `${lines[i][j+2]}${lines[i+2][j+2]}`
+    const letter1 = lines[i][j];
+    const letter2= lines[i][j+2];
+    const letter3 = lines[i+2][j];
+    const letter4 = lines[i+2][j+2];
+    const str = `${letter1}${letter2}${letter3}${letter4}`;
+    if (!VALID.includes(str)
     ) {
         return false;
     }
