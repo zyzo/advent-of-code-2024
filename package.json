@@ -10,4 +10,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""}
+  "description": "",
+  "dependencies": {
+    "decimal.js": "^10.4.3"
+  }
+}
